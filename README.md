@@ -1,6 +1,8 @@
 # hugo-s3
 Docker container that can build a hugo site from a git repo and push it to a s3 bucket.
 
+Should be useable in build tools such as Bitbucket Pipelines and Werker workflows.
+
 ## usage
 
 ```
@@ -11,8 +13,8 @@ Usage:
 $ docker run rabidgremlin/hugo-s3 https://github.com/rabidgremlin/hugo-s3-test.git hugo-s3-test AxxxxxxxxxxxxxxxxxxxA jyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyn
 ```
 
-Any parameters passed the first 4 are passed to hugo. For instnace to override the *baseurl* you can pass the *-b* parameters as follows:
+Any parameters after the first 4 are passed onto Hugo. For instance to override the *baseurl* you can pass the *-b* parameter to Hugo as follows:
 
 ```
-$ docker run rabidgremlin/hugo-s3 https://github.com/rabidgremlin/hugo-s3-test.git hugo-s3-test AxxxxxxxxxxxxxxxxxxxA jyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyn`-b http://hugo-s3-test.s3xxxxxxxxxxxxxxxxxxxx.amazonaws.com/
+$ docker run rabidgremlin/hugo-s3 https://github.com/rabidgremlin/hugo-s3-test.git hugo-s3-test AxxxxxxxxxxxxxxxxxxxA jyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyn -b http://hugo-s3-test.s3xxxxxxxxxxxxxxxxxxxx.amazonaws.com/
 ```
