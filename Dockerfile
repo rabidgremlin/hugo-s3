@@ -5,5 +5,6 @@ RUN apt-get -y update && \
     pip install awscli
 
 COPY hugo-s3.sh /
+RUN chmod +x /hugo-s3.sh
 
-ENTRYPOINT /hugo-s3.sh
+ENTRYPOINT ["/hugo-s3.sh"]
